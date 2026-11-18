@@ -55,3 +55,13 @@ medicion estadistica de confianza.
 ```powershell
 .venv\Scripts\python -m unittest discover -s tests -v
 ```
+
+## Docker
+
+```powershell
+docker build -t gridmind-ia .
+docker run --rm -p 5000:5000 gridmind-ia
+```
+
+La imagen usa gunicorn y escucha en `PORT` (5000 por defecto). Con `BIND_HOST=::` escucha
+también por IPv6. Para levantar el esqueleto completo, usa `compose.yaml` del repo GridMind-backend.
